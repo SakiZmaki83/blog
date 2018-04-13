@@ -23,7 +23,7 @@
             <hr/>
             <h4>Comments</h4>
 
-            <form method="POST" action="{{route('comments-post', ['post_id=> $post->id']) }}">
+            <form method="POST" action="{{route('comments-post', ['post_id' => $post->id]) }}">
 		{{ csrf_field() }}
 		<div class="form-group">
 			<label for="text">Molimo unesite komentar: </label>

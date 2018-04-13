@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\CommentReceived;
+use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 
-class CommentController extends Controller
+class CommentsController extends Controller
 {
     public function store($postId)
     {
@@ -17,6 +19,8 @@ class CommentController extends Controller
         ]);
 
         $post->comments()->create(request()->all());
+
+        Mail::to($post->user)->send(new CommentReceived($post));
 
         return redirect()->back();
     }
