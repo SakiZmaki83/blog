@@ -6,17 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-  //  public static function getPublished(){
-    //    return self::where('is_published', true)->get();
+ 
     protected $fillable = [
     	'title', 'body', 'is_published'
-
     ];
-
-    public static function getPublishedPosts()
-    {
-    	return self::where('is_published', true)->get();
-    }
 
     public function comments()
     {
@@ -30,5 +23,8 @@ class Post extends Model
     {
       return $this->belongsToMany('App\Tag');
     }
-    
+     
+    public static function getPublishedPosts() {
+      return Post::where('is_published', true);
+    }
 }

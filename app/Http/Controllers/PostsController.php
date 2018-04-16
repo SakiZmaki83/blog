@@ -16,10 +16,11 @@ class PostsController extends Controller
 
     public function index()
     {
+        $posts = Post::paginate(10);
         
-        $posts = Post::getPublishedPosts();
+      //  $posts = Post::getPublishedPosts();
 
-        return view('posts.index', compact(['posts']));
+        return view('posts.index', compact('posts'));
     }
 
     public function show($id)

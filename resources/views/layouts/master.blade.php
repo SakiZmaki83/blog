@@ -54,19 +54,21 @@
     <div class="container">
 
       <div class="row">
-        
+        <div class="col-sm-8 blog main">
         @yield('content')
-
+        </div>
 
      
+     
 
-
-
-        @include('partials.sidebar')
+        <div class="col-sm-3  blog sidebar">
+   @include('partials.sidebar')
+   </div>
 
       </div><!-- /.row -->
-
+     
     </div><!-- /.container -->
+  
 
     @include('partials.footer')
 
