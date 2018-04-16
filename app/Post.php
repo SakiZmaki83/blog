@@ -27,4 +27,8 @@ class Post extends Model
     public static function getPublishedPosts() {
       return Post::where('is_published', true);
     }
+
+
+    
+
 }
