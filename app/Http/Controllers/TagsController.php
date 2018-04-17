@@ -9,8 +9,12 @@ class TagsController extends Controller
 {
     public function index(Tag $tag)
     {
-        $posts = $tag->posts;
-
-        return view('posts.index', compact('posts'));
+        
+            $posts = $tag->posts()->with('user')->latest()->paginate(10);
+     
+            return view('posts.index', compact('posts'));
+        
     }
 }
+
+

@@ -27,7 +27,7 @@ Route::get('/posts/create',  'PostsController@create');
 Route::get('/posts/{id}', ['as' => 'single-post', 'uses' => 'PostsController@show']);
 Route::post('/posts', 'PostsController@store');
 Route::post('/posts/{post_id}/comments', ['as'=> 'comments-post', 'uses'=> 'CommentsController@store']);
-Route::get('/posts/tag/{tag}', 'TagsController@index')->name('posts-tags');
+Route::get('/posts/tags/{tag}', 'TagsController@index')->name('posts-tags');
 
 
 

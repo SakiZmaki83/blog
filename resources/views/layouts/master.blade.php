@@ -62,7 +62,7 @@
      
 
         <div class="col-sm-3  blog sidebar">
-   @include('partials.sidebar')
+   @include('partials.sidebar', compact('tags'))
    </div>
 
       </div><!-- /.row -->

@@ -21,6 +21,24 @@
 			<label for="body">Ovo je body</label>
 			<textarea id="body" name="body"></textarea>
 
+
+
+		@if (count($tags)) 
+			<div class="form-group">
+				<label for="tags[]" > TAGS </label> <br>
+
+		@foreach ($tags as $tag)
+
+			<input type="checkbox" id="tag" name="tags[]"
+			value="{{ $tag->id }}"> {{ $tag->name }} <br>
+
+		@endforeach
+
+			</div>
+		@endif
+
+
+
 			@include('partials.error-message', ['fieldTitle' => 'body'])
 		</div>
 
